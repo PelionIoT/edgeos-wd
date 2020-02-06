@@ -33,7 +33,7 @@ pipeline {
       //parallel {
         stage('Test'){
           agent{
-            label 'noida-linux-ubuntu16-ci-slave'
+            label 'noi-linux-ubuntu16-ci-slave'
           }
           steps {
             sh 'touch coverage.xml'
