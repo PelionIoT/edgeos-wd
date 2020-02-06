@@ -78,7 +78,7 @@ pipeline {
       slackSend(channel: '#edge-jenkins-ci', color: 'warning', message: "JOB NAME: ${env.JOB_NAME}\nBUILD NUMBER: ${env.BUILD_NUMBER}\nSTATUS: ${currentBuild.currentResult}\n${env.RUN_DISPLAY_URL}")
     }
     always{
-      node('noida-linux-ubuntu16-ci-slave'){
+      node('noi-linux-ubuntu16-ci-slave'){
         junit 'report.xml'
         archiveArtifacts artifacts: 'html/**/*'
         //step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: 'coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
